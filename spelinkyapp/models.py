@@ -28,3 +28,11 @@ class UserRoles(db.Model):
     id = db.Column(db.Integer(), primary_key=True)
     user_id = db.Column(db.Integer(), db.ForeignKey('user.id', ondelete='CASCADE'))
     role_id = db.Column(db.Integer(), db.ForeignKey('role.id', ondelete='CASCADE'))
+
+
+class Link(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    url = db.Column(db.String(5000), nullable=False)
+    title = db.Column(db.String(150), nullable=False)
+    img_url = db.Column(db.String(5000))
+    description = db.Column(db.String(1000))

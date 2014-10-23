@@ -20,6 +20,7 @@ setup(
         'Flask-SQLAlchemy',
         'Flask-Restless',
         'Flask-User',
-        'Flask-Babel'
+        'Flask-Babel',
+        'Flask-Admin'
     ]
 )

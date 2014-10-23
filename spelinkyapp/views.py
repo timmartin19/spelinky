@@ -1,6 +1,7 @@
 __author__ = 'Tim Martin'
-from spelinkyapp import app
 from flask import render_template
+from models import Link
+from spelinkyapp import app
 
 
 @app.route('/ad_panel')
@@ -15,7 +16,7 @@ def logout():
 
 @app.route('/')
 def index():
-    return render_template('common/base.html')
+    return render_template('main/home.html')
 
 
 @app.route('/profile')
@@ -30,4 +31,6 @@ def generate_apis(api_manager):
     :param api_manager: The flask restless api manager
     :type api_manager: flask_restless.APIManager
     """
-    api_manager.create_api()
+    api_manager.create_api(Link,
+                           methods=['GET'],
+                           include_columns=['id', 'url', 'title', 'img_url', 'description'])
