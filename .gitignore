@@ -58,3 +58,9 @@ target/
 
 # sqlite databases
 *.db
+
+# local lxml bullshit
+lxml/
+
+# Media folder
+spelinkyapp/static/media/

@@ -21,6 +21,9 @@ setup(
         'Flask-Restless',
         'Flask-User',
         'Flask-Babel',
-        'Flask-Admin'
+        'Flask-Admin',
+        'requests',
+        'beautifulsoup4',
+        'Pillow'
     ]
 )

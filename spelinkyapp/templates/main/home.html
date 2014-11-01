@@ -4,25 +4,36 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <form class="form-inline" role="form">
-                <div class="form-group">
+            <form class="form" role="form" action="{{ url_for('post_link') }}" method="post" id="postLinkForm">
+                <div class="input-group">
+                    <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
                     <input type="url" placeholder="{% trans %}post a link{% endtrans %}" name="link_url" class="form-control">
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary">{% trans %}Link it!{% endtrans %}</button>
+                    </span>
                 </div>
-                <button type="submit" class="btn btn-primary">{% trans %}Link it!{% endtrans %}</button>
             </form>
         </div>
     </div>
     <div id="links-list">
         <div data-bind="foreach: objects">
+            <br/>
             <div class="row">
                 <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 link-panel">
-                    <div class="row link-title"><a data-bind="text: title, attr: { href: url }" target="_blank"></a></div>
-                    <div class="row link-details">
-                        <img class="link-img pull-left" data-bind="attr: { src: img_url }" style="max-width: 200px; max-height: 200px;">
-                        <span class="link-description" data-bind="text: description"></span>
-                    </div>
-                    <div class="row link-controls">
-
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="media">
+                                <a class="pull-left" href="#">
+                                    <img class="media-object" data-bind="attr: { src: img_url }" style="max-height: 124px;">
+                                </a>
+                                <div class="media-body">
+                                    <a data-bind="attr: { href: url }" target="_blank">
+                                        <h4 class="media-body" data-bind="text: title"></h4>
+                                    </a>
+                                    <span class="link-description" data-bind="text: description"></span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

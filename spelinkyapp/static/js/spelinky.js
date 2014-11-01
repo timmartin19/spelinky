@@ -33,7 +33,8 @@ Spelinky = {
     },
     retrieve: {
         links: function(){
-            $.getJSON('/api/link', function(data){
+            url = '/api/link?q=' + JSON.stringify({'order_by': [{field: 'date_uploaded', direction: 'desc'}]});
+            $.getJSON(url, function(data){
                 if(Spelinky.resources.allLinks == null){
                     Spelinky.resources.allLinks = ko.mapping.fromJS(data, Spelinky.mappings.links);
                     ko.applyBindings(Spelinky.resources.allLinks, Spelinky.resources.linksDiv[0]);

@@ -1,4 +1,5 @@
 __author__ = 'Tim Martin'
+import os
 
 MAIL_USERNAME = 'email@example.com'
 MAIL_PASSWORD = 'password'
@@ -15,5 +16,7 @@ SQLALCHEMY_DATABASE_URI = 'sqlite:///spelinky_app.db'
 USER_ENABLE_USERNAME = False
 USER_ENABLE_CHANGE_USERNAME = False
 USER_ENABLE_EMAIL = True
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 DEBUG = True
