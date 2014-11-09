@@ -14,6 +14,13 @@ Spelinky.Router.map(function() {
 Spelinky.HomeRoute = Ember.Route.extend({
     model: function(){
         return this.store.find('link');
+    },
+    renderTemplate: function(){
+        this.render();
+        this.render("nav", {
+            outlet: "nav",
+            into: "home"
+        })
     }
 });
 

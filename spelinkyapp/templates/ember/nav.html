@@ -16,21 +16,24 @@
 
         <div class="collapse navbar-collapse" id="main-nav-links">
             <ul class="nav navbar-nav">
-                <li class="active">
-                    {{ '{{#link-to home}}' }}
+                {% raw %}{{#link-to "home.index" tagName="li" class="nav-link"}}{% endraw %}
+                <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
                     <span class="glyphicon glyphicon-home"></span> {% trans %}home{% endtrans %}
-                    {{ '{{/link-to}}'}}
-                </li>
-                <li>
-                    {{ '{{#link-to adcontrol}}' }}
+                </a>
+                {% raw %}{{/link-to}}{% endraw %}
+
+                {% raw %}{{#link-to "ad" tagName="li" class="nav-link"}}{% endraw %}
+                <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
                     <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
-                    {{ '{{/link-to}}' }}
-                </li>
-                <li>
-                    {{ '{{#link-to profile}}' }}
+                </a>
+                {% raw %}{{/link-to}}{% endraw %}
+
+                {% raw %}{{#link-to "profile" tagName="li" class="nav-link"}}{% endraw %}
+                <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
                     <span class="glyphicon glyphicon-user"></span> {% trans %}profile{% endtrans %}
-                    {{ '{{/link-to}}' }}
-                </li>
+                </a>
+                {% raw %}{{/link-to}}{% endraw %}
+
             </ul>
             <form class="navbar-form navbar-left" role="search">
                 <div class="form-group has-feedback">

@@ -9,7 +9,7 @@ Spelinky.User = DS.Model.extend({
     active: DS.attr('boolean', {defaultValue: true}),
     fullName: function(){
         return this.get('first_name') + " " + this.get('last_name');
-    },
+    }.property('first_name', 'last_name'),
 
     links: DS.hasMany('link'),
     ad_control: DS.belongsTo('adControl', {async: true})

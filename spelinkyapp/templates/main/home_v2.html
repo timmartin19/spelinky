@@ -3,24 +3,8 @@
 {% block content %}
 
     <script type="text/x-handlebars" data-template-name="home">
-     <ul class="nav navbar-nav">
-                <li class="active">
-                    {%raw%}{{#link-to 'home'}}{% endraw %}
-                    <span class="glyphicon glyphicon-home"></span> {% trans %}home{% endtrans %}
-                    {%raw%}{{/link-to}}{% endraw %}
-                </li>
-                <li>
-                    {%raw%}{{#link-to 'ad'}}{% endraw %}
-                    <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
-                    {%raw%}{{/link-to}}{% endraw %}
-                </li>
-                <li>
-                    {%raw%}{{#link-to 'profile.index'}}{% endraw %}
-                    <span class="glyphicon glyphicon-user"></span> {% trans %}profile{% endtrans %}
-                    {%raw%}{{/link-to}}{% endraw %}
-                </li>
-            </ul>
         {% raw %}
+            {{outlet "nav"}}
 
             <div style="margin-top: 70px;"></div>
             <div class="container">
@@ -37,8 +21,7 @@
         {% include 'ember/nav.html' %}
     </script>
 
-    <script type="text/x-handlebars" data-template-name="home/profile">
-    HERE!!!!!
+    <script type="text/x-handlebars" data-template-name="profile">
         {% include 'ember/profile.html' %}
     </script>
 
