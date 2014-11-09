@@ -1,0 +1,52 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+
+    <script type="text/x-handlebars" data-template-name="home">
+     <ul class="nav navbar-nav">
+                <li class="active">
+                    {%raw%}{{#link-to 'home'}}{% endraw %}
+                    <span class="glyphicon glyphicon-home"></span> {% trans %}home{% endtrans %}
+                    {%raw%}{{/link-to}}{% endraw %}
+                </li>
+                <li>
+                    {%raw%}{{#link-to 'ad'}}{% endraw %}
+                    <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
+                    {%raw%}{{/link-to}}{% endraw %}
+                </li>
+                <li>
+                    {%raw%}{{#link-to 'profile.index'}}{% endraw %}
+                    <span class="glyphicon glyphicon-user"></span> {% trans %}profile{% endtrans %}
+                    {%raw%}{{/link-to}}{% endraw %}
+                </li>
+            </ul>
+        {% raw %}
+
+            <div style="margin-top: 70px;"></div>
+            <div class="container">
+                {{outlet}}
+            </div>
+        {% endraw %}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="home/index">
+        {% include 'ember/links.html' %}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="nav">
+        {% include 'ember/nav.html' %}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="home/profile">
+    HERE!!!!!
+        {% include 'ember/profile.html' %}
+    </script>
+
+    <script type="text/x-handlebars" data-template-name="home/profile/ad">
+        {% include 'ember/adcontrol.html' %}
+    </script>
+
+{% endblock %}
+
+{% block extrajs %}
+{% endblock %}

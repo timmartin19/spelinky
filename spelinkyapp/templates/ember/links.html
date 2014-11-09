@@ -1,0 +1,29 @@
+{% raw %}
+    <div class="row">
+        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 link-form">
+            {{input type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
+            <button class="btn btn-primary pull-right" {{action 'postLink' on="click"}}>linkit!</button>
+        </div>
+    </div>
+    <br/>
+
+    {{#each}}
+        <div class="row">
+            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 link-panel">
+                <div class="panel panel-default">
+                    <div class="panel-body">
+                        <div class="media">
+                            <img class="media-object pull-left" {{bind-attr src=img_url}} style="width: 124px;">
+                            <div class="media-body">
+                                <a {{bind-attr href=url}} target="_blank">
+                                    <h4 class="media-body">{{title}}</h4>
+                                </a>
+                                <span class="link-description">{{description}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+{% endraw %}

@@ -7,15 +7,12 @@ Spelinky.User = DS.Model.extend({
     last_name: DS.attr('string'),
     email: DS.attr('string'),
     active: DS.attr('boolean', {defaultValue: true}),
+    fullName: function(){
+        return this.get('first_name') + " " + this.get('last_name');
+    },
 
-    roles: DS.hasMany('role'),
-    links: DS.hasMany('link')
-});
-
-Spelinky.Role = DS.model.extend({
-    name: DS.attr('string'),
-
-    users: DS.hasMany('user')
+    links: DS.hasMany('link'),
+    ad_control: DS.belongsTo('adControl', {async: true})
 });
 
 Spelinky.Link = DS.Model.extend({
@@ -28,4 +25,10 @@ Spelinky.Link = DS.Model.extend({
     }),
 
     owner: DS.belongsTo('user')
+});
+
+Spelinky.AdControl = DS.Model.extend({
+    user: DS.belongsTo('user', {async: true}),
+    anonymous: DS.attr('boolean'),
+    level: DS.attr('integer')
 });

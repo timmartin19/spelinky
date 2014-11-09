@@ -18,7 +18,7 @@ def logout():
 
 @app.route('/')
 def index():
-    return render_template('main/home.html')
+    return render_template('main/home_v2.html')
 
 
 @app.route('/profile')

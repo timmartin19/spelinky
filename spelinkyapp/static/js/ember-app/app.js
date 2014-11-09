@@ -3,4 +3,5 @@
  */
 window.Spelinky = Ember.Application.create();
 
+Spelinky.ApplicationAdapter = DS.FixtureAdapter.extend();
 

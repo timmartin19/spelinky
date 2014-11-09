@@ -1,0 +1,47 @@
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main-nav-links">
+                    <span class="sr-only">{% trans %}Main navigation{% endtrans %}</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                {% raw %}
+                    {{#link-to links class="navbar-brand"}}Spelinky{{/link-to}}
+                {% endraw %}
+            </div>
+        </div>
+
+        <div class="collapse navbar-collapse" id="main-nav-links">
+            <ul class="nav navbar-nav">
+                <li class="active">
+                    {{ '{{#link-to home}}' }}
+                    <span class="glyphicon glyphicon-home"></span> {% trans %}home{% endtrans %}
+                    {{ '{{/link-to}}'}}
+                </li>
+                <li>
+                    {{ '{{#link-to adcontrol}}' }}
+                    <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
+                    {{ '{{/link-to}}' }}
+                </li>
+                <li>
+                    {{ '{{#link-to profile}}' }}
+                    <span class="glyphicon glyphicon-user"></span> {% trans %}profile{% endtrans %}
+                    {{ '{{/link-to}}' }}
+                </li>
+            </ul>
+            <form class="navbar-form navbar-left" role="search">
+                <div class="form-group has-feedback">
+                    <input type="text" class="form-control" placeholder="{% trans %}search for friends{% endtrans %}">
+                    <i class="glyphicon glyphicon-search form-control-feedback"></i>
+                </div>
+                <button type="submit" class="btn btn-default sr-only" id="searchBtn">{% trans %}search{% endtrans %}</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="{{ url_for('logout') }}"><span class="glyphicon glyphicon-log-out"></span> {% trans %}logout{% endtrans %}</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
