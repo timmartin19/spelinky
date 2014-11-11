@@ -22,11 +22,13 @@
                 </a>
                 {% raw %}{{/link-to}}{% endraw %}
 
-                {% raw %}{{#link-to "ad" tagName="li" class="nav-link"}}{% endraw %}
-                <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
-                    <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
-                </a>
-                {% raw %}{{/link-to}}{% endraw %}
+                {#
+                    {% raw %}{{#link-to "ad" tagName="li" class="nav-link"}}{% endraw %}
+                    <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
+                        <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
+                    </a>
+                    {% raw %}{{/link-to}}{% endraw %}
+                #}
 
                 {% raw %}{{#link-to "profile" tagName="li" class="nav-link"}}{% endraw %}
                 <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>

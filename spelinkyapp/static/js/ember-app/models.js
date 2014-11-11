@@ -3,6 +3,7 @@
  */
 Spelinky.User = DS.Model.extend({
     username: DS.attr('string'),
+    profile_img: DS.attr('string'),
     first_name: DS.attr('string'),
     last_name: DS.attr('string'),
     email: DS.attr('string'),
@@ -12,7 +13,8 @@ Spelinky.User = DS.Model.extend({
     }.property('first_name', 'last_name'),
 
     links: DS.hasMany('link'),
-    ad_control: DS.belongsTo('adControl', {async: true})
+    anonymous: DS.attr('boolean'),
+    ad_level: DS.attr('integer')
 });
 
 Spelinky.Link = DS.Model.extend({
@@ -25,10 +27,4 @@ Spelinky.Link = DS.Model.extend({
     }),
 
     owner: DS.belongsTo('user')
-});
-
-Spelinky.AdControl = DS.Model.extend({
-    user: DS.belongsTo('user', {async: true}),
-    anonymous: DS.attr('boolean'),
-    level: DS.attr('integer')
 });

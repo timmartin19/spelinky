@@ -1,8 +1,10 @@
 {% raw %}
     <div class="row">
         <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 link-form">
-            {{input type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
-            <button class="btn btn-primary pull-right" {{action 'postLink' on="click"}}>linkit!</button>
+            <button id="newLinkBtn" class="btn btn-primary pull-right" {{action 'postLink' on="click"}}>link-it!</button>
+            <span id="newLinkInputSpan">
+                {{input id="newLinkInput" type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
+            </span>
         </div>
     </div>
     <br/>
