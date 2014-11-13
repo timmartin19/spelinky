@@ -1,7 +1,7 @@
 {% raw %}
     <div class="row">
-        <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 link-form">
-            <button id="newLinkBtn" class="btn btn-primary pull-right" {{action 'postLink' on="click"}}>link-it!</button>
+        <div class="col-sm-12 link-form">
+            <button id="newLinkBtn" class="btn btn-primary pull-right" {{action 'postLink' newUrl on="click"}}>link-it!</button>
             <span id="newLinkInputSpan">
                 {{input id="newLinkInput" type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
             </span>
@@ -11,7 +11,7 @@
 
     {{#each}}
         <div class="row">
-            <div class="col-sm-10 col-sm-offset-1 col-md-8 col-md-offset-2 link-panel">
+            <div class="col-sm-12 link-panel">
                 <div class="panel panel-default">
                     <div class="panel-body">
                         <div class="media">

@@ -14,7 +14,12 @@ Spelinky.User = DS.Model.extend({
 
     links: DS.hasMany('link'),
     anonymous: DS.attr('boolean'),
-    ad_level: DS.attr('integer')
+    ad_level: DS.attr('integer'),
+
+    sortedLinks: function(){
+        var links = this.get('links').toArray();
+        return links.sort().reverse();
+    }.property('links.@each.isLoaded')
 });
 
 Spelinky.Link = DS.Model.extend({
