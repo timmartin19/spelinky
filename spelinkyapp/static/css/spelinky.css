@@ -28,6 +28,20 @@
     max-width: 300px;
 }
 
+.inline-form-span {
+    width: 83%;
+}
+
+.inline-form-btn{
+    width: 15%;
+    float: right;
+    font-weight: bold;
+}
+
+.inline-form-input{
+    width: 83%;
+}
+
 #newLinkInput{
     width: 83%;
 }

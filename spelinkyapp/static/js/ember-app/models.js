@@ -36,8 +36,10 @@ Spelinky.Link = DS.Model.extend({
 });
 
 Spelinky.Comment = DS.Model.extend({
-    link: DS.belongsTo('link'),
-    owner: DS.belongsTo('user'),
-    date_posted: DS.attr('date'),
+    link: DS.belongsTo('link', {async: true}),
+    owner: DS.belongsTo('user', {async: true}),
+    date_posted: DS.attr('date', {
+        defaultValue: function(){return new Date();}
+    }),
     comment_text: DS.attr('string')
 });
