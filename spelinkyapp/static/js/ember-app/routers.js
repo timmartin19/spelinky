@@ -5,8 +5,7 @@
 Spelinky.Router.map(function() {
     this.resource('home', { path: '/'}, function(){
         this.resource('links', { path: '/links' });
-        this.resource('profile', { path: '/profile' }, function(){
-        });
+        this.resource('profile', { path: '/profile/:id' });
     });
 });
 
@@ -24,8 +23,13 @@ Spelinky.HomeRoute = Ember.Route.extend({
 });
 
 Spelinky.ProfileRoute = Ember.Route.extend({
-    model: function(){
-        var userId = $('meta#userId').attr('content');
+    model: function(params){
+        var userId = null;
+        if(params == null || params.id == null) {
+            userId = $('meta#userId').attr('content');
+        }else{
+            userId = params.id;
+        }
         return this.store.find('user', userId);
     }
 });

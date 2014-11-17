@@ -1,23 +1,23 @@
 {% raw %}
 <div class="row">
     <div class="col-sm-3">
-        <img width="100%" alt="profile image" {{bind-attr src=profile_img}}>
+        <img class="profile-img" alt="profile image" {{bind-attr src=profile_img}}>
     </div>
     <div class="col-sm-9">
         <div class="row profile-row">
-            <div class="col-sm-3">Username: </div>
-            <div class="col-sm-6">{{username}}</div>
+            <div class="col-sm-3 profile-header">Username: </div>
+            <div class="col-sm-9">{{username}}</div>
         </div>
         <div class="row profile-row">
-            <div class="col-sm-3">Name: </div>
-            <div class="col-sm-6">{{fullName}}</div>
+            <div class="col-sm-3 profile-header">Name: </div>
+            <div class="col-sm-9">{{fullName}}</div>
         </div>
         <div class="row profile-row">
-            <div class="col-sm-3">Email: </div>
-            <div class="col-sm-6">{{email}}</div>
+            <div class="col-sm-3 profile-header">Email: </div>
+            <div class="col-sm-9">{{email}}</div>
         </div>
         <div class="row profile-row">
-            <div class="col-sm-3">Ad Level: </div>
+            <div class="col-sm-3 profile-header">Ad Level: </div>
             <div class="col-sm-9">
                 <div class="row">
                     <div class="col-xs-1"><span id="lessAdsIndicator">$</span></div>
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="row profile-row">
-            <div class="col-sm-3">Anonymous: </div>
+            <div class="col-sm-3 profile-header">Anonymous: </div>
             <div class="col-sm-6">
                 {{input type="checkbox" checked=anonymous class="checkbox"}}
             </div>

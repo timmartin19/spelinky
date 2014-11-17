@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 {% raw %}
-                    {{#link-to links class="navbar-brand"}}Spelinky{{/link-to}}
+                    {{#link-to "home.index" class="navbar-brand"}}Spelinky{{/link-to}}
                 {% endraw %}
             </div>
         </div>
@@ -22,15 +22,7 @@
                 </a>
                 {% raw %}{{/link-to}}{% endraw %}
 
-                {#
-                    {% raw %}{{#link-to "ad" tagName="li" class="nav-link"}}{% endraw %}
-                    <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
-                        <span class="glyphicon glyphicon-dashboard"></span> {% trans %}ad control{% endtrans %}
-                    </a>
-                    {% raw %}{{/link-to}}{% endraw %}
-                #}
-
-                {% raw %}{{#link-to "profile" tagName="li" class="nav-link"}}{% endraw %}
+                {% raw %}{{#link-to "profile" 1 tagName="li" class="nav-link"}}{% endraw %}
                 <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
                     <span class="glyphicon glyphicon-user"></span> {% trans %}profile{% endtrans %}
                 </a>
