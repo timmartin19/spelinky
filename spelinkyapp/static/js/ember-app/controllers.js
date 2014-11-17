@@ -54,10 +54,16 @@ Spelinky.LinkController = Ember.ObjectController.extend({
 });
 
 Spelinky.ProfileController = Ember.ObjectController.extend({
-    needs: 'home_index',
+    needs: ['home_index', 'link'],
     actions: {
         postLink: function(url){
             this.get('controllers.home_index').send('postLink', url);
+        },
+        toggleComments: function(){
+            this.get('controllers.link').send('toggleComments');
+        },
+        postComment: function(comment){
+            this.get('controllers.link').send('postComment', comment);
         }
     }
 });
