@@ -1,0 +1,21 @@
+{% raw %}
+<div class="row">
+    <div class="col-sm-12">
+        <button class="btn btn-default pull-right" data-toggle="collapse" {{action 'toggleComments' on="click"}}>comments</button>
+    </div>
+</div>
+<div class="comments-container">
+    {{#if viewingComments}}
+    <br/>
+        {{#each comments}}
+            {{indv-comment comment=this}}
+        {{/each}}
+        <div>
+            <form class="inline-form">
+                <button type="submit" class="inline-form-btn btn btn-primary pull-right" {{action 'postComment' newComment on="click"}}>post</button>
+                    {{input class="form-control inline-form-input" value=newComment placeholder="make a comment!"}}
+            </form>
+        </div>
+    {{/if}}
+</div>
+{% endraw %}

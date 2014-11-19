@@ -1,0 +1,4 @@
+{% raw %}
+    <img class="link-profile-img" alt="Profile Image" {{bind-attr src=owner.profile_img}}/>
+    <span>{{#link-to "profile" owner.id}}{{owner.username}}{{/link-to}}</span>
+{% endraw %}

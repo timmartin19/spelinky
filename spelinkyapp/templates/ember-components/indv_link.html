@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title></title>
-</head>
-<body>
-
-</body>
-</html>
+{% raw %}
+<div class="row">
+    <div class="col-sm-12 link-panel">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                {{profile-img owner=link.owner}}
+            </div>
+            <div class="panel-body">
+                <div class="media">
+                    <img class="media-object pull-left" {{bind-attr src=img_url}} style="width: 124px;">
+                    <div class="media-body">
+                        <a {{bind-attr href=url}} target="_blank">
+                            <h4 class="media-body">{{link.title}}</h4>
+                        </a>
+                        <span class="link-description">{{link.description}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                {{comments-container comments=link.comments}}
+            </div>
+        </div>
+    </div>
+</div>
+{% endraw %}
