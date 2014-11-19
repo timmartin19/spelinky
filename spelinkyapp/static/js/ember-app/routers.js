@@ -36,23 +36,6 @@ Spelinky.ProfileRoute = Ember.Route.extend({
     }
 });
 
-Spelinky.ProfileIndexRoute = Ember.Route.extend({
-    model: function(params){
-        var userId = null;
-        if(params == null || params.id == null) {
-            userId = $('meta#userId').attr('content');
-        }else{
-            userId = params.id;
-        }
-        this.store.filter('link', function(link){
-            var linkId = link.get('owner').get('id');
-            alert(linkId);
-            alert(userId);
-           return  linkId === userId;
-        });
-    }
-});
-
 Spelinky.LinksRoute = Ember.Route.extend({
     model: function(){
         return this.store.find('link');

@@ -1,0 +1,63 @@
+{% raw %}
+    <div class="row">
+        <div class="col-sm-12 link-form">
+            <form class="inline-form">
+                <button class="inline-form-btn btn btn-primary pull-right" {{action 'postLink' newUrl on="click"}}>link-it!</button>
+                <span class="inline-form-span">
+                    {{input type="url" value=newUrl class="form-control inline-form-input" placeholder="paste a link!"}}
+                </span>
+            </form>
+        </div>
+    </div>
+    <br/>
+
+    {{#each links}}
+        <div class="row">
+            <div class="col-sm-12 link-panel">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <img class="link-profile-img" alt="Profile Image" {{bind-attr src=owner.profile_img}}/>
+                        <span >{{#link-to "profile" owner.id}}{{owner.username}}{{/link-to}}</span>
+                    </div>
+                    <div class="panel-body">
+                        <div class="media">
+                            <img class="media-object pull-left" {{bind-attr src=img_url}} style="width: 124px;">
+                            <div class="media-body">
+                                <a {{bind-attr href=url}} target="_blank">
+                                    <h4 class="media-body">{{title}}</h4>
+                                </a>
+                                <span class="link-description">{{description}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-footer">
+                        <div>
+                            <button class="btn btn-default" data-toggle="collapse" {{action 'toggleComments' on="click"}}>comments</button>
+                        </div>
+                        <div class="comments-container">
+                            {{#if viewingComments}}
+                                {{#each comments}}
+                                    <div class="panel panel-default">
+                                        <div class="panel-heading">
+                                            <img class="link-profile-img" alt="Profile Image" {{bind-attr src=owner.profile_img}}/>
+                                            <span >{{#link-to "profile" owner.id}}{{owner.username}}{{/link-to}}</span>
+                                        </div>
+                                        <div class="panel-body comment-body">
+                                            {{comment_text}}
+                                        </div>
+                                    </div>
+                                {{/each}}
+                                <div>
+                                    <form class="inline-form">
+                                        <button type="submit" class="inline-form-btn btn btn-primary pull-right" {{action 'postComment' newComment on="click"}}>post</button>
+                                            {{input class="form-control inline-form-input" value=newComment placeholder="make a comment!"}}
+                                    </form>
+                                </div>
+                            {{/if}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/each}}
+{% endraw %}
