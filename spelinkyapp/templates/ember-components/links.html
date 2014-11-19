@@ -1,17 +1,19 @@
 {% raw %}
     <div class="row">
-        <div class="col-sm-12 link-form">
-            <form class="inline-form">
-                <button class="inline-form-btn btn btn-primary pull-right" {{action 'postLink' newUrl on="click"}}>link-it!</button>
-                <span class="inline-form-span">
-                    {{input type="url" value=newUrl class="form-control inline-form-input" placeholder="paste a link!"}}
-                </span>
+        <div class="col-sm-12">
+            <form>
+                <div class="input-group">
+                    {{input type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
+                    <span class="input-group-btn">
+                        <button type="submit" class="btn btn-primary" {{action 'postLink' newUrl on="click"}}>link-it!</button>
+                    </span>
+                </div>
             </form>
         </div>
     </div>
     <br/>
 
     {{#each links}}
-        {{indv-link link=this}}
+        {{indv-link link=this store=store}}
     {{/each}}
 {% endraw %}

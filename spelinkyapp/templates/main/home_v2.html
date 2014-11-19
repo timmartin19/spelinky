@@ -14,7 +14,13 @@
     </script>
 
     <script type="text/x-handlebars" data-template-name="home/index">
-        {% include 'ember/links.html' %}
+        {% raw %}
+            <div class="row">
+                <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
+                    {{links-container links=this store=controller.store}}
+                </div>
+            </div>
+        {% endraw %}
     </script>
 
     <script type="text/x-handlebars" data-template-name="nav">
@@ -23,10 +29,6 @@
 
     <script type="text/x-handlebars" data-template-name="profile">
         {% include 'ember/profile.html' %}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="home/profile/index">
-        {% include 'ember/links.html' %}
     </script>
 
     <script type="text/x-handlebars" data-template-name="home/profile/ad">

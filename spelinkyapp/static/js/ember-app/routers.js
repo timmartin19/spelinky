@@ -41,9 +41,3 @@ Spelinky.LinksRoute = Ember.Route.extend({
         return this.store.find('link');
     }
 });
-
-Spelinky.LinksUserRoute = Ember.Route.extend({
-    model: function(params){
-        return this.store.findQuery('link', params);
-    }
-});
