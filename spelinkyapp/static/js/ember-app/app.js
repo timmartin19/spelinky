@@ -3,6 +3,10 @@
  */
 window.Spelinky = Ember.Application.create();
 
+Spelinky.userId = function(){
+    return parseInt($('meta[name="currentUser"]').attr('content'));
+}.property();
+
 Spelinky.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 Spelinky.NavView = Ember.View.extend({
