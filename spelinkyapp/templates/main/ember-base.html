@@ -3,17 +3,11 @@
 {% block content %}
 
     <script type="text/x-handlebars" data-template-name="home">
-        {% include 'ember/nav.html' %}
+        {% include 'ember/home.html' %}
     </script>
 
     <script type="text/x-handlebars" data-template-name="links">
-        {% raw %}
-            <div class="row">
-                <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                    {{links-container links=this store=controller.store}}
-                </div>
-            </div>
-        {% endraw %}
+        {% include 'ember/links.html' %}
     </script>
 
     <script type="text/x-handlebars" data-template-name="profile">

@@ -18,7 +18,7 @@ def logout():
 
 @app.route('/')
 def index():
-    return render_template('main/home_v2.html')
+    return render_template('main/ember-base.html')
 
 
 @app.route('/profile')

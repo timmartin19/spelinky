@@ -44,8 +44,23 @@
 </nav>
 
 {% raw %}
-    <div style="margin-top: 70px;"></div>
-    <div class="container">
+
+    <div class="container-fluid">
+        <div class="row link-input-row">
+            <div class="col-sm-12">
+                <form>
+                    <div class="input-group link-input">
+                        {{input type="url" value=newUrl class="form-control" placeholder="paste a link!"}}
+                        <span class="input-group-btn">
+                            <button type="submit" class="btn btn-primary" {{action 'postLink' newUrl on="click"}}>link-it!</button>
+                        </span>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="nav-spacer"></div>
+
         {{outlet}}
     </div>
 {% endraw %}

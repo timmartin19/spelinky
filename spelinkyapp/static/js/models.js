@@ -12,7 +12,9 @@ Spelinky.User = DS.Model.extend({
         return this.get('first_name') + " " + this.get('last_name');
     }.property('first_name', 'last_name'),
 
-    links: DS.hasMany('link'),
+    links: DS.hasMany('link', {
+        async: true
+    }),
     anonymous: DS.attr('boolean'),
     ad_level: DS.attr('integer'),
 
