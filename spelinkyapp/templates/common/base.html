@@ -5,27 +5,25 @@
     <title>Spelinky</title>
     <meta name="csrf_token" content="{{ csrf_token() }}"/>
     <meta id="userId" name="currentUser" content="1"/>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}"/>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/bootstrap/dist/css/bootstrap.min.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('static', filename='bower_components/jquery-ui/themes/sunny/jquery-ui.css') }}"/>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/spelinky.css') }}"/>
     {% block extrastylesheets %}{% endblock %}
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <script src="//code.jquery.com/ui/1.11.2/jquery-ui.js"></script>
 </head>
 <body>
     {% block content %}{% endblock %}
-        <script src="{{ url_for('static', filename='js/thirdparty/bootstrap.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/thirdparty/knockout-3.2.0.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/thirdparty/knockout.mapping-latest.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/thirdparty/handlebars-v1.3.0.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/thirdparty/ember-1.8.0.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/thirdparty/ember-data.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/ember-app/app.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/ember-app/models.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/ember-app/routers.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/ember-app/controllers.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/ember-app/components.js') }}"></script>
-        <script src="{{ url_for('static', filename='js/ember-app/temp_fixtures.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/jquery/dist/jquery.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/jquery-ui/jquery-ui.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/handlebars/handlebars.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/ember/ember.js') }}"></script>
+        <script src="{{ url_for('static', filename='bower_components/ember-data/ember-data.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/models.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/routers.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/controllers.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/components.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/temp_fixtures.js') }}"></script>
     {% block extrajs %}{% endblock %}
 </body>
 </html>

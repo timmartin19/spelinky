@@ -64,3 +64,6 @@ lxml/
 
 # Media folder
 spelinkyapp/static/media/
+
+#Bower dependencies
+bower_components
