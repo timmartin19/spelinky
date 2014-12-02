@@ -10,7 +10,6 @@ Spelinky.User.FIXTURES = [
         last_name: 'Last',
         email: 'first@last.com',
         active: true,
-        as_control: 0,
         links: [0, 1, 2, 3],
         anonymous: false,
         ad_level: 20
@@ -23,7 +22,6 @@ Spelinky.User.FIXTURES = [
         last_name: 'User',
         email: 'second@user.com',
         active: true,
-        ad_control: 1,
         links: [4, 5],
         anonymous: false,
         ad_level: 80
@@ -36,7 +34,6 @@ Spelinky.User.FIXTURES = [
         last_name: 'User',
         email: 'third@user.com',
         active: true,
-        ad_control: 2,
         links: [6, 7],
         anonymous: true,
         ad_level: 20

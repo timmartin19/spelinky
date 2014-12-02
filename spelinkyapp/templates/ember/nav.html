@@ -9,14 +9,14 @@
                     <span class="icon-bar"></span>
                 </button>
                 {% raw %}
-                    {{#link-to "home.index" class="navbar-brand"}}Spelinky{{/link-to}}
+                    {{#link-to "home" class="navbar-brand"}}Spelinky{{/link-to}}
                 {% endraw %}
             </div>
         </div>
 
         <div class="collapse navbar-collapse" id="main-nav-links">
             <ul class="nav navbar-nav">
-                {% raw %}{{#link-to "home.index" tagName="li" class="nav-link"}}{% endraw %}
+                {% raw %}{{#link-to "home" tagName="li" class="nav-link"}}{% endraw %}
                 <a {% raw %}{{bind-attr href="view.href"}}{% endraw %}>
                     <span class="glyphicon glyphicon-home"></span> {% trans %}home{% endtrans %}
                 </a>
@@ -42,3 +42,10 @@
         </div>
     </div>
 </nav>
+
+{% raw %}
+    <div style="margin-top: 70px;"></div>
+    <div class="container">
+        {{outlet}}
+    </div>
+{% endraw %}

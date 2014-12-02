@@ -3,17 +3,10 @@
 {% block content %}
 
     <script type="text/x-handlebars" data-template-name="home">
-        {% raw %}
-            {{outlet "nav"}}
-
-            <div style="margin-top: 70px;"></div>
-            <div class="container">
-                {{outlet}}
-            </div>
-        {% endraw %}
+        {% include 'ember/nav.html' %}
     </script>
 
-    <script type="text/x-handlebars" data-template-name="home/index">
+    <script type="text/x-handlebars" data-template-name="links">
         {% raw %}
             <div class="row">
                 <div class="col-sm-12 col-md-10 col-md-offset-1 col-lg-8 col-lg-offset-2">
@@ -21,10 +14,6 @@
                 </div>
             </div>
         {% endraw %}
-    </script>
-
-    <script type="text/x-handlebars" data-template-name="nav">
-        {% include 'ember/nav.html' %}
     </script>
 
     <script type="text/x-handlebars" data-template-name="profile">

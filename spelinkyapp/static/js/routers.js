@@ -11,7 +11,7 @@ Spelinky.Router.map(function() {
 
 Spelinky.HomeRoute = Ember.Route.extend({
     model: function(){
-        return this.store.find('user', Spelinky.userId);
+        return this.store.find('user', Spelinky.UIHelpers.userId());
     }
 });
 

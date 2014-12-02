@@ -3,10 +3,6 @@
  */
 window.Spelinky = Ember.Application.create();
 
-Spelinky.userId = function(){
-    return parseInt($('meta[name="currentUser"]').attr('content'));
-}.property();
-
 Spelinky.ApplicationAdapter = DS.FixtureAdapter.extend();
 
 Spelinky.NavView = Ember.View.extend({
@@ -48,6 +44,9 @@ Spelinky.UIHelpers = {
         //$('#adLevelSlider').css('background-color', "rgb(" + red + ', ' + green + ', 50)');
         $('#lessAdsIndicator').css('font-size', (1 + relativeSize) + 'em');
         $('#moreAdsIndicator').css('font-size', (1 - relativeSize) + 'em');
+    },
+    userId: function(){
+        return parseInt($('meta[name="currentUser"]').attr('content'));
     }
 };
 

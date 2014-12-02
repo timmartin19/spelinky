@@ -28,6 +28,10 @@ Spelinky.LinksController = Ember.ArrayController.extend({
     sortAscending: true
 });
 
+Spelinky.LinkController = Ember.ObjectController.extend({
+
+});
+
 Spelinky.ProfileController = Ember.ObjectController.extend({
     isCurrentUser: function(){
         var currentViewingId = this.get('model.id');
